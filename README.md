@@ -2,7 +2,7 @@
 A curated list of precompiled Wasm binaries of
 programs that are known to successfully work with
 [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in
-[Golem network](https://github.com/golemfactory/golem/tree/develop/apps/wasm).
+[Golem](https://github.com/golemfactory/golem).
 See [here](https://github.com/golemfactory/golem/wiki/Launching-Wasm-tasks-in-Golem)
 to learn how to launch a Wasm task in Golem.
 
