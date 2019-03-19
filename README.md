@@ -3,6 +3,8 @@ This repo contains precompiled Wasm binaries of several open-source
 programs that are known to successfully work with
 [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in
 [Golem network](https://github.com/golemfactory/golem/tree/develop/apps/wasm).
+See [here](https://github.com/golemfactory/golem/wiki/Launching-Wasm-tasks-in-Golem)
+to learn how to launch a Wasm task in Golem.
 
 Supported programs:
 * [7-zip](7-zip) - 7-zip archiver
