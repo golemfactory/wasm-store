@@ -1,0 +1,23 @@
+{
+    "type": "wasm",
+    "name": "dcraw",
+    "bid": 1,
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "dcraw.js",
+        "wasm_name": "dcraw.wasm",
+        "input_dir": "./in",
+        "output_dir": "./out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": [
+                    "example.crw"
+                ],
+                "output_file_paths": [
+                    "example.ppm"
+                ]
+            }
+        }
+    }
+}
