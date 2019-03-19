@@ -1,14 +1,14 @@
 {
     "type": "wasm",
-    "name": "7za",
+    "name": "7zip",
     "bid": 1,
     "subtask_timeout": "00:10:00",
     "timeout": "00:10:00",
     "options": {
         "js_name": "7za.js",
         "wasm_name": "7za.wasm",
-        "input_dir": "./in",
-        "output_dir": "./out",
+        "input_dir": "<abs-path-to-wasm-store>/7-zip/in",
+        "output_dir": "<abs-path-to-wasm-store>/7-zip/out",
         "subtasks": {
             "subtask1": {
                 "exec_args": [

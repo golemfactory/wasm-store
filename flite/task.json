@@ -7,8 +7,8 @@
     "options": {
         "js_name": "flite.js",
         "wasm_name": "flite.wasm",
-        "input_dir": "./in",
-        "output_dir": "./out",
+        "input_dir": "<abs-path-to-wasm-store>/flite/in",
+        "output_dir": "<abs-path-to-wasm-store>/flite/out",
         "subtasks": {
             "subtask1": {
                 "exec_args": [

@@ -7,8 +7,8 @@
     "options": {
         "js_name": "dcraw.js",
         "wasm_name": "dcraw.wasm",
-        "input_dir": "./in",
-        "output_dir": "./out",
+        "input_dir": "<path-to-wasm-store>/dcraw/in",
+        "output_dir": "<path-to-wasm-store>/dcraw/out",
         "subtasks": {
             "subtask1": {
                 "exec_args": [
