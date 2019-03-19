@@ -4,19 +4,6 @@ A program to compress and decompress data.
 * [Homepage](https://www.7-zip.org/)
 * [Source code](https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2/download)
 
-## Running in Golem
-```
-$ golemcli tasks create wasm-store/7-zip/task.json
-```
-
-## Running directly in sandbox
-```
-$ cd wasm-store/7-zip
-$ wasm-sandbox -I in -O out -j 7za.js -w 7za.wasm -o in.zip -- a in.zip in.bin
-```
-
-Note that the output is going to be saved at `out/in.zip`.
-
 ## Building from source
 
 ```
