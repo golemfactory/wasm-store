@@ -14,6 +14,3 @@ The list:
 ## Contributing
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
-
-## License
-This repo is hosted under [GNU General Public License v3](LICENSE).
