@@ -1,0 +1,5 @@
+7-zip/7za.wasm filter=lfs diff=lfs merge=lfs -text
+7-zip/in/in.bin filter=lfs diff=lfs merge=lfs -text
+dcraw/dcraw.wasm filter=lfs diff=lfs merge=lfs -text
+dcraw/in/example.crw filter=lfs diff=lfs merge=lfs -text
+flite/flite.wasm filter=lfs diff=lfs merge=lfs -text
