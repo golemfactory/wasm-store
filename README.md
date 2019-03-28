@@ -69,3 +69,6 @@ where the `task.json` would consist of
 }
 ```
 For an example, see for example how [7-zip](7-zip) is set up in this repo.
+
+Of course, if anything is unclear or you find some inconsistencies, please
+do submit a new issue and we'll make sure it's sorted asap.
