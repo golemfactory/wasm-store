@@ -14,3 +14,57 @@ The list:
 ## Contributing
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
+
+When contributing, please make sure the repo the link will be pointing to adheres to the
+structure expected by Wasm task in Golem. That is, we're looking for dir structure similar
+to the following
+
+```
+.
+|-- task.json
+|-- README.md
+|-- LICENSE
+|-- input_dir
+|   |-- program.js
+|   |-- program.wasm
+|   |-- subtask1
+|   |   |-- input_file_1_1
+|   |   `-- input_file_1_2
+|   `-- subtask2
+|       |-- input_file_2_1
+|       `-- input_file_2_2
+`-- output_dir
+    |-- subtask1
+    |   |-- output_file_1_1
+    |   `-- output_file_1_2
+    `-- subtask2
+        |-- output_file_2_1
+        `-- output_file_2_2
+```
+where the `task.json` would consist of
+
+```json
+{
+    "type": "wasm", 
+    "name": "program", 
+    "bid":  1,
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "program.js",
+        "wasm_name": "program.wasm",
+        "input_dir": "<abs_path_to_the_repo>/input_dir",
+        "output_dir": "<abs_path_to_the_repo>/output_dir",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["arg1_1", "arg1_2"],
+                "output_file_paths": ["output_file_1_1", "output_file_1_2"]
+            },
+            "subtask2": {
+                "exec_args": ["arg2_1", "arg2_2"],
+                "output_file_paths": ["output_file_2_1", "output_file_2_2"]
+            }
+        }
+    }
+}
+```
