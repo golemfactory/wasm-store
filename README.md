@@ -11,6 +11,17 @@ The list:
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
 
+## Cloning the repo
+When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this
+repo on your machine. Usually, this can be accomplished as follows:
+
+```
+$ git clone https://github.com/golemfactory/wasm-store
+$ cd wasm-store
+$ git lfs install
+$ git lfs pull
+```
+
 ## Contributing
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
