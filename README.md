@@ -3,8 +3,16 @@ A curated list of precompiled Wasm binaries of
 programs that are known to successfully work with
 [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in
 [Golem](https://github.com/golemfactory/golem).
+The list includes applications directly located in this repo,
+as well as links that points to external.
+The applications can be raw or augmented with a client.
+When using raw, a user connects directly with Golem. 
+That is more technical approach.
 See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
+The applications augmented with a client are more user friendly,
+because it handles communication with Golem node,
+but there is no generic client.
 
 The list:
 * [7-zip](7-zip) - 7-zip archiver
@@ -25,8 +33,12 @@ $ git lfs pull
 ## Contributing
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
+Your repo should contain README file and license. 
+If it is raw application, it should follow the below guidelines.
+Approach to applications augemented with clients is more liberal.
 
-When contributing, please make sure the repo the link will be pointing to adheres to the
+## Directories structure
+When contributing an application in raw flavor, please make sure the repo the link will be pointing to adheres to the
 structure expected by Wasm task in Golem. That is, we're looking for dir structure similar
 to the following
 
