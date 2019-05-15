@@ -3,10 +3,21 @@ A curated list of precompiled Wasm binaries of
 programs that are known to successfully work with
 [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in
 [Golem](https://github.com/golemfactory/golem).
+The list includes applications located directly in this repo,
+as well as links that point to external sources.
+The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
+Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](https://github.com/golemfactory/golem-client)). 
+Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
 See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
+The applications augmented with a GUI/CLI are naturally more user friendly,
+because they handle communication with Golem node,
+Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](https://github.com/golemfactory/g-flite) app for instance.
 
-The list:
+The list of applications with GUI/CLI:
+* [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
+
+The list of raw applications:
 * [7-zip](7-zip) - 7-zip archiver
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
@@ -25,8 +36,12 @@ $ git lfs pull
 ## Contributing
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
+Your repo should contain README file and license. 
+If it is a raw Wasm binary, it should follow the guidelines below.
+For apps augmented with GUI/CLI, the requirements are more relaxed and not set in stone, with the only must-have: good user experience :-)
 
-When contributing, please make sure the repo the link will be pointing to adheres to the
+## Directories structure
+When contributing an application in a raw Wasm format, please make sure that the submitted link adheres to the
 structure expected by Wasm task in Golem. That is, we're looking for dir structure similar
 to the following
 
