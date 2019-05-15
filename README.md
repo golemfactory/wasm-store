@@ -36,7 +36,7 @@ We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
 Your repo should contain README file and license. 
 If it is a raw Wasm binary, it should follow the guidelines below.
-Approach to applications augemented with clients is more liberal.
+For apps augmented with GUI/CLI, the requirements are more relaxed and not set in stone, with the only must-have: good user experience :-)
 
 ## Directories structure
 When contributing an application in raw flavor, please make sure the repo the link will be pointing to adheres to the
