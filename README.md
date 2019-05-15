@@ -39,7 +39,7 @@ If it is a raw Wasm binary, it should follow the guidelines below.
 For apps augmented with GUI/CLI, the requirements are more relaxed and not set in stone, with the only must-have: good user experience :-)
 
 ## Directories structure
-When contributing an application in raw flavor, please make sure the repo the link will be pointing to adheres to the
+When contributing an application in a raw Wasm format, please make sure that the submitted link adheres to the
 structure expected by Wasm task in Golem. That is, we're looking for dir structure similar
 to the following
 
