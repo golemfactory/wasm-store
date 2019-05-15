@@ -12,7 +12,7 @@ See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
 The applications augmented with a GUI/CLI are naturally more user friendly,
 because it handles communication with Golem node,
-but there is no generic client. See g-flite for instance.
+Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](https://github.com/golemfactory/g-flite) app for instance.
 
 The list:
 * [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
