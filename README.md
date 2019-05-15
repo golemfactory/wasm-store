@@ -6,7 +6,7 @@ programs that are known to successfully work with
 The list includes applications located directly in this repo,
 as well as links that point to external sources.
 The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
-When using raw, a user connects directly with Golem. 
+Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](https://github.com/golemfactory/golem-client)). 
 That is more technical approach.
 See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
