@@ -10,7 +10,7 @@ Using raw Wasm binaries implies that the user has to be able to prepare the corr
 Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
 See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
-The applications augmented with a client are more user friendly,
+The applications augmented with a GUI/CLI are naturally more user friendly,
 because it handles communication with Golem node,
 but there is no generic client. See g-flite for instance.
 
