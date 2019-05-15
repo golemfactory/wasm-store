@@ -3,7 +3,7 @@ A curated list of precompiled Wasm binaries of
 programs that are known to successfully work with
 [Wasm sandbox](https://github.com/golemfactory/sp-wasm) in
 [Golem](https://github.com/golemfactory/golem).
-The list includes applications directly located in this repo,
+The list includes applications located directly in this repo,
 as well as links that points to external.
 The applications can be raw or augmented with a client.
 When using raw, a user connects directly with Golem. 
