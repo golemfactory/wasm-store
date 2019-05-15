@@ -5,7 +5,7 @@ programs that are known to successfully work with
 [Golem](https://github.com/golemfactory/golem).
 The list includes applications located directly in this repo,
 as well as links that point to external sources.
-The applications can be raw or augmented with a client.
+The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
 When using raw, a user connects directly with Golem. 
 That is more technical approach.
 See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
