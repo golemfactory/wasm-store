@@ -14,8 +14,10 @@ The applications augmented with a GUI/CLI are naturally more user friendly,
 because they handle communication with Golem node,
 Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](https://github.com/golemfactory/g-flite) app for instance.
 
-The list:
+The list of applications with GUI/CLI:
 * [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
+
+The list of raw applications:
 * [7-zip](7-zip) - 7-zip archiver
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
