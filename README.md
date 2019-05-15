@@ -12,9 +12,10 @@ See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
 to learn how to launch a Wasm task in Golem.
 The applications augmented with a client are more user friendly,
 because it handles communication with Golem node,
-but there is no generic client.
+but there is no generic client. See g-flite for instance.
 
 The list:
+* [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
 * [7-zip](7-zip) - 7-zip archiver
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
