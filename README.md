@@ -35,7 +35,7 @@ $ git lfs pull
 We welcome contributions in the form of links to precompiled Wasm binaries of
 other programs. If you would like to submit such a link, do not hesitate to open a new PR.
 Your repo should contain README file and license. 
-If it is raw application, it should follow the below guidelines.
+If it is a raw Wasm binary, it should follow the guidelines below.
 Approach to applications augemented with clients is more liberal.
 
 ## Directories structure
