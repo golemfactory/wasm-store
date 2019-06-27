@@ -9,6 +9,13 @@ The file `in.txt` contains graph. It is in the form of a table of integers with 
 
 You should run multiple instances of the program. Each takes the same input file but different parameters. Each instance writes answer to the output file `out.txt`, so watch out to not override it. The output file contains the minimal Hamiltonian path the the instance found. In the first row is total weight of the path, in the second row are nodes in the order that forms the path. Negative total weight means that the instance did not find the path.
 
+The expected positive output (content of the `out.txt` file) is like
+
+```
+4
+0 3 1 2 4
+```
+
 ### Parameters
 
 The program takes two parameters. The first is a remainder `r`, the second is denominator `d`. The program searches all paths starting from any `i`-th node such that `i mod d = r`. So if you want to search Hamiltonian paths with parallel degree of `3`, you should run `3` instances with parameters `0 3`, `1 3`, `2 3`.
