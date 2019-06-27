@@ -15,7 +15,7 @@ The program takes two parameters. The first is a remainder `r`, the second is de
 
 ### Algoritm
 
-The algorithm is brute force. It searches all possible paths in DFS manner.
+The algorithm is naive. It searches all possible paths in DFS manner.
 
 ### Running
 
