@@ -11,7 +11,7 @@ You should run multiple instances of the program. Each takes the same input file
 
 ### Parameters
 
-The program takes two parameters. The first is a reminder `r`, the second is denominator `d`. The program searches all paths starting from any `i`-th node such that `i mod d = r`. So if you want to search Hamiltonian paths with parallel degree of `3`, you should run `3` instances with parameters `0 3`, `1 3`, `2 3`.
+The program takes two parameters. The first is a remainder `r`, the second is denominator `d`. The program searches all paths starting from any `i`-th node such that `i mod d = r`. So if you want to search Hamiltonian paths with parallel degree of `3`, you should run `3` instances with parameters `0 3`, `1 3`, `2 3`.
 
 ### Algoritm
 
