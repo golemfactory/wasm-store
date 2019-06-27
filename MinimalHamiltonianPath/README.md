@@ -1,5 +1,5 @@
 The program searches for minimal Hamiltonian path
-in direct weighted graphs.
+in weighted directed graphs.
 
 ### Input file
 
