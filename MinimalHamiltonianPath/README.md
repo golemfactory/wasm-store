@@ -23,7 +23,7 @@ At first copy the directory `MinimalHamiltonianPath` to your local drive and go 
 
 Before running the example, edit the file `task.json` and update fields `input_dir` and `output_dir`.
 
-If you makes any changes to `mhp.c` file, do the following.
+If you make any changes to `mhp.c` file, do the following.
 
 ```
 emcc -o mhp.js -s BINARYEN_ASYNC_COMPILATION=0 mhp.c
