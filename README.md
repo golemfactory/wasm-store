@@ -21,6 +21,7 @@ The list of raw applications:
 * [7-zip](7-zip) - 7-zip archiver
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
+* [Minimal Hamiltonian Path](MinimalHamiltonianPath) - searches for minimal Hamiltonian path in weighted directed graphs
 
 ## Cloning the repo
 When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this
