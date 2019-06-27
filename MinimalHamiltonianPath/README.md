@@ -31,7 +31,7 @@ mv mhp.js in/
 mv mhp.wasm in/
 ```
 
-If you want to run the algorithm with the parallel degree of `3` for instance, you need to have the proper subdirectories in `in` directory and configured `task.json`. 
+If you want to run the algorithm with the parallel degree of `3` for instance (3 Golem subtasks), you need to have the proper subdirectories in `in` directory and configured `task.json`. 
 
 ```
 mkdir in/subtask3
