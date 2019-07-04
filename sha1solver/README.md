@@ -33,9 +33,9 @@ Before running the example, edit the file `task.json` and update fields `input_d
 If you make any changes to `mhp.c` file, do the following.
 
 ```
-emcc -o mhp.js -s BINARYEN_ASYNC_COMPILATION=0 mhp.c
-mv mhp.js in/
-mv mhp.wasm in/
+emcc sha1solver.c sha1.c -o sha1solver.js -s BINARYEN_ASYNC_COMPILATION=0 -s MEMFS_APPEND_TO_TYPED_ARRAYS=1 -s ALLOW_MEMORY_GROWTH=1
+mv sha1solver.js in/
+mv sha1solver.wasm in/
 ```
 
 If you want to run the algorithm with the parallel degree of `3` for instance (3 Golem subtasks), you need to have the proper subdirectories in `in` directory and configured `task.json`. 
