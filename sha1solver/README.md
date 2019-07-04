@@ -1,5 +1,7 @@
 The program searches for SHA1 collisions. Actually, it replaces bytes at given positions in a given file in order to get desired hash.
 
+The core source code that calculates SHA1 (`sha1.h` and `sha1.c`) comes from [here](https://github.com/clibs/sha1)
+
 ### Input file
 
 The file `infile` is an input binary file. The name of the file cannot be changed. 
