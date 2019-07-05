@@ -75,7 +75,7 @@ void SHA1Check(
     unsigned int ii;
     char result[HASH_BYTE_LENGTH+1];
     int char_pattern_len = pattern_len/2;
-    char *char_pattern = (char*)malloc ( (char_pattern_len) * sizeof (char));
+    char *char_pattern = malloc ( char_pattern_len * sizeof (char));
 
     for (int ii = 0; ii < char_pattern_len; ii += 1) {
 	char_pattern[ii] = hex(pattern+2*ii)*16+hex(pattern+2*ii+1);
@@ -114,7 +114,9 @@ int main(
 
   char *pattern = argv[5];
 
-  FILE *f_in = fopen("infile", "rb");
+  char *f_in_name = argv[6];
+
+  FILE *f_in = fopen(f_in_name, "rb");
   fseek(f_in, 0, SEEK_END);
   long fsize = ftell(f_in);
   fseek(f_in, 0, SEEK_SET);  /* same as rewind(f_in); */
@@ -125,12 +127,19 @@ int main(
 
   fcontent[fsize] = 0;
 
-  FILE* f_out = fopen("out.txt", "w");
+  FILE* f_out;
+  if (argc == 8) {
+      char *f_out_name = argv[7];
+      f_out = fopen(f_out_name, "w");
+  } else {
+      f_out = stdout;
+  }
 
   /* calculate hash */
   SHA1Check( fcontent, fsize, region_start , region_end, pattern, strlen(pattern), r, s, f_out);
 
-  fclose(f_out);
+  if (argc == 8)
+    fclose(f_out);
 
   return 0;
 }
