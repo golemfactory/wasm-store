@@ -7,7 +7,19 @@
 #define HASH_BYTE_LENGTH 20
 
 /*
- * returns 0 - if matching hash is found, 1 - if matching hash is not found and all possible configurations of bytes in the region were checked
+ * Searches for the next configuration of bytes in the region such that hash of str matches the given pattern.
+ * It starts with current configuration of bytes in the region, increments the bytes until first match is found.
+ * It modifies the region in str, actually the region in str is kind of state of the search for all matches.
+ * The function is to be called multiple times.
+ * The bytes in the region is interpreted as little endian representation of the number. 
+ * Upon the first call it should be 0. The search is done when the number loops back to 0.
+ * Not all configuration of bytes are eligible. Only one s-th part is eligible. Which part is set by param r.
+ * @param poz_start first position of the region (inclusive)
+ * @param poz_end last position of the region (exclusive)
+ * @param r reminder
+ * @param s denominator
+ * @param first indicates if current configuration of bytes in the region is to be checked (1) or not (0); is it first call to SHA1Progress
+ * @return 0 - if matching hash is found, 1 - if matching hash is not found and all eligible configurations of bytes in the region were checked
  */
 int SHA1Progress(
     char *hash_out,
@@ -26,7 +38,7 @@ int SHA1Progress(
     int poz;
     poz = poz_start;
     if (!first) {
-	str[poz] ++;
+	str[poz] ++;  //move to the next configuration of bytes in the region
         if (str[poz] == (const unsigned char) 0) {
             poz ++;
         }
@@ -51,7 +63,7 @@ int SHA1Progress(
 	        return 0; //matching hash is found
 	}
 
-	str[poz] ++;
+	str[poz] ++;  //move to the next configuration of bytes in the region
         if (str[poz] == (const unsigned char) 0) {
             poz ++;
         } else {
@@ -67,8 +79,8 @@ void SHA1Check(
     int poz_end,
     char *pattern,
     int pattern_len,
-    int r,
-    int s,
+    int reminder,
+    int denominator,
     FILE * f_out)
 {
     SHA1_CTX ctx;
@@ -90,7 +102,7 @@ void SHA1Check(
         SHA1Update(&ctx, (const unsigned char*)str + ii, 1);
 
     int first = 1;
-    while (SHA1Progress(result, str, len, poz_start, poz_end, &ctx, char_pattern, char_pattern_len, r, s, first) == 0) {
+    while (SHA1Progress(result, str, len, poz_start, poz_end, &ctx, char_pattern, char_pattern_len, reminder, denominator, first) == 0) {
 	    for ( int ii = poz_start; ii < poz_end; ii += 1 )
 		fprintf(f_out, "%02x", str[ii]&0xff);
 	    fprintf(f_out, " -> ");
@@ -106,8 +118,8 @@ int main(
    int argc, char** argv 
 )
 {
-  int r = (int) strtol(argv[1], (char **)NULL, 10);
-  int s = (int) strtol(argv[2], (char **)NULL, 10);
+  int reminder = (int) strtol(argv[1], (char **)NULL, 10);
+  int denominator = (int) strtol(argv[2], (char **)NULL, 10);
 
   int region_start = (int) strtol(argv[3], (char **)NULL, 10);
   int region_end = (int) strtol(argv[4], (char **)NULL, 10);
@@ -136,7 +148,7 @@ int main(
   }
 
   /* calculate hash */
-  SHA1Check( fcontent, fsize, region_start , region_end, pattern, strlen(pattern), r, s, f_out);
+  SHA1Check( fcontent, fsize, region_start , region_end, pattern, strlen(pattern), reminder, denominator, f_out);
 
   if (argc == 8)
     fclose(f_out);
