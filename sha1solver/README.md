@@ -13,8 +13,8 @@ You should run multiple instances of the program. Each takes the same input file
 The expected output (content of the `out.txt` file) contains rows like
 
 ```
-4
-0 3 1 2 4
+6e -> f4103261f5ec31ae0cc057f842a80bf160c6689d
+86 -> 738ebd5b459d64c8395842036e7b0a0357d4209d
 ```
 
 Each byte written as hexadecimal.
@@ -38,7 +38,7 @@ The fifth parameter is the pattern. It is from 1 to 20 bytes written as hexadeci
 The example set of parameters is
 
 ```
-0, 2, 2, 3, 589d
+0 2 2 3 9d
 ```
 
 ### Remarks
