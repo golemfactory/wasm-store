@@ -4,7 +4,11 @@
 #include "stdlib.h"
 
 #define hex(c) ((*(c)>='a')?*(c)-'a'+10:(*(c)>='A')?*(c)-'A'+10:*(c)-'0') 
+#define HASH_BYTE_LENGTH 20
 
+/*
+ * returns 0 - if matching hash is found, 1 - if matching hash is not found and all possible configurations of bytes in the region were checked
+ */
 int SHA1Progress(
     char *hash_out,
     char *str,
@@ -18,12 +22,6 @@ int SHA1Progress(
     int s,
     int first)
 {
-    unsigned int ii;
-
-    SHA1Init(ctx);
-    for (ii=0; ii<poz_start; ii+=1)
-        SHA1Update(ctx, (const unsigned char*)str + ii, 1);
-
     SHA1_CTX ctx1;
     int poz;
     poz = poz_start;
@@ -36,20 +34,21 @@ int SHA1Progress(
     while (1) {
 	if (poz > poz_start) {
 	    if (poz == poz_end) {
-		return 1;
+		return 1; //all possible configurations of bytes in the region were checked
 	    }
 	} else if ( (poz_end-poz_start == 1 && str[poz_start] % s == r) || (poz_end-poz_start > 1 && ( (str[poz_start]+256*str[poz_start+1]) % s == r))) {
             ctx1 = *ctx;
-            for (ii=poz_start; ii<len; ii+=1)
+            for (unsigned int ii=poz_start; ii<len; ii+=1)
                 SHA1Update(&ctx1, (const unsigned char*)str + ii, 1);
             SHA1Final((unsigned char *)hash_out, &ctx1);
 
-	    for (ii = 0; ii < pattern_len; ii+=1 ) {
-		if (hash_out[20-pattern_len + ii] != pattern[ii]) 
+	    unsigned int jj;
+	    for (jj = 0; jj < pattern_len; jj+=1 ) {
+		if (hash_out[HASH_BYTE_LENGTH-pattern_len + jj] != pattern[jj]) 
 		    break;
 	    }
-	    if (ii == pattern_len)
-	        return 0;
+	    if (jj == pattern_len)
+	        return 0; //matching hash is found
 	}
 
 	str[poz] ++;
@@ -74,10 +73,7 @@ void SHA1Check(
 {
     SHA1_CTX ctx;
     unsigned int ii;
-    char result[21];
-    char hexresult[41];
-    hexresult[40] = '\0';
-    size_t offset;
+    char result[HASH_BYTE_LENGTH+1];
     int char_pattern_len = pattern_len/2;
     char *char_pattern = (char*)malloc ( (char_pattern_len) * sizeof (char));
 
@@ -85,9 +81,9 @@ void SHA1Check(
 	char_pattern[ii] = hex(pattern+2*ii)*16+hex(pattern+2*ii+1);
     }
 
-    result[20] = '\0';
+    result[HASH_BYTE_LENGTH] = '\0';
     for (ii=poz_start; ii<poz_end; ii+=1)
-        str[ii] = (const unsigned char) 0;
+        str[ii] = 0;
 
     SHA1Init(&ctx);
     for (ii=0; ii<poz_start; ii+=1)
@@ -95,11 +91,12 @@ void SHA1Check(
 
     int first = 1;
     while (SHA1Progress(result, str, len, poz_start, poz_end, &ctx, char_pattern, char_pattern_len, r, s, first) == 0) {
-            for ( offset = 0; offset < 20; offset++)
-                sprintf( ( hexresult + (2*offset)), "%02x", result[offset]&0xff);
 	    for ( int ii = poz_start; ii < poz_end; ii += 1 )
-		fprintf(f_out, "%c", str[ii]);
-            fprintf(f_out, " -> %s\n", hexresult);
+		fprintf(f_out, "%02x", str[ii]&0xff);
+	    fprintf(f_out, " -> ");
+	    for ( int ii = 0; ii < HASH_BYTE_LENGTH; ii++)
+		fprintf(f_out, "%02x", result[ii]&0xff);
+            fprintf(f_out, "\n");
 	    first = 0;
     }
 }
