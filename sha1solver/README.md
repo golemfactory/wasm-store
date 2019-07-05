@@ -4,13 +4,13 @@ The core source code that calculates SHA1 (`sha1.h` and `sha1.c`) comes from [he
 
 ### Input file
 
-The file `infile` is an input binary file. The name of the file cannot be changed. 
+The input file is an input binary file.
 
 ### Execution and output
 
-You should run multiple instances of the program. Each takes the same input file but different parameters. Each instance writes an answer to the output file `out.txt`, so watch out to not override it. The output file contains text. Each rows contains bytes from the region and the hash of the `infile`.
+You should run multiple instances of the program. Each takes the same input file but different parameters. Each instance writes an answer to the output file, so watch out to not override it. The output file contains text. Each rows contains bytes from the region and the hash of the input file.
 
-The expected output (content of the `out.txt` file) contains rows like
+The expected output (content of the output file) contains rows like
 
 ```
 6e -> f4103261f5ec31ae0cc057f842a80bf160c6689d
@@ -21,7 +21,7 @@ Each byte written as hexadecimal.
 
 ### Algoritm
 
-At the beginning there is the input file `infile`. The input parameters indicates the region. It is a sequence of byte positions in the input file. The algorithm replaces bytes in the region and calculates SHA1 hash of the file. The goal is to find such bytes in the region that the hash of the file is equal the desired hash. The desired hash is an input parameter.
+At the beginning there is the input file. The input parameters indicates the region. It is a sequence of byte positions in the input file. The algorithm replaces bytes in the region and calculates SHA1 hash of the file. The goal is to find such bytes in the region that the hash of the file is equal the desired hash. The desired hash is an input parameter.
 It is very hard to find exact match for the hash. We weaken this condition. Instead of searching exact match, the algorithm searches for matching the given pattern. The algorithm searches for all combinations of bytes in the region such that the hash of the file matches the pattern.
 The algorithm is naive. It searches all possible combinations of bytes in the region.
 
@@ -35,10 +35,14 @@ The third and fourt parameters are starting position of the region in the file (
 
 The fifth parameter is the pattern. It is from 1 to 20 bytes written as hexadecimal (so it is up to 40 chars).
 
+The sixth parameter is the name of input file.
+
+The seventh parameter is the name of output file. It is optional. If it is not set, then the output is written to stdout.
+
 The example set of parameters is
 
 ```
-0 2 2 3 9d
+0 2 2 3 9d inline out.txt
 ```
 
 ### Remarks
@@ -83,15 +87,15 @@ vi task.json
         "output_dir": "/home/lukaszglen/wasm_test_5/sha1/out",
         "subtasks": {
             "subtask1": {
-                "exec_args": ["0", "3", "2", "3", "9d"],
+                "exec_args": ["0", "3", "2", "3", "9d", "infile", "out.txt"],
                 "output_file_paths": ["out.txt"]
             },
             "subtask2": {
-                "exec_args": ["1", "3", "2", "3", "9d"],
+                "exec_args": ["1", "3", "2", "3", "9d", "infile", "out.txt"],
                 "output_file_paths": ["out.txt"]
             },
             "subtask3": {
-                "exec_args": ["2", "3", "2", "3", "9d"],
+                "exec_args": ["2", "3", "2", "3", "9d", "infile", "out.txt"],
                 "output_file_paths": ["out.txt"]
             }
         }
