@@ -7,8 +7,8 @@
     "options": {
         "js_name": "hello.js",
         "wasm_name": "hello.wasm",
-        "input_dir": "/home/lukaszglen/wasm_test_5/hello/in",
-        "output_dir": "/home/lukaszglen/wasm_test_5/hello/out",
+        "input_dir": "/path/to/your/working/directory/hello/in",
+        "output_dir": "/path/to/your/working/directory/hello/out",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["world"],
