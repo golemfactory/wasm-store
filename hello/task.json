@@ -1,0 +1,19 @@
+{
+    "type": "wasm", 
+    "name": "wasm", 
+    "bid":  "1",
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "hello.js",
+        "wasm_name": "hello.wasm",
+        "input_dir": "/path/to/your/working/directory/hello/in",
+        "output_dir": "/path/to/your/working/directory/hello/out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["world"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
