@@ -13,7 +13,7 @@ If datadir cannot be found, then
 golemcli tasks create task.json --datadir=/path/to/your/datadir
 ```
 
-If golemcli cannot be found, then please read Golem docs on how to use golemcli.
+If golemcli cannot be found, then please read [Golem docs](https://docs.golem.network/#/Products/Brass-Beta/Command-line-interface) on how to use golemcli.
 
 After a while check the output
 ```
