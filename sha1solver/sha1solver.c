@@ -20,7 +20,7 @@
  * eligible. Which part is set by param r.
  * @param poz_start first position of the region (inclusive)
  * @param poz_end last position of the region (exclusive)
- * @param r reminder
+ * @param r remainder
  * @param s denominator
  * @param first indicates if current configuration of bytes in the region is to
  * be checked (1) or not (0); is it first call to SHA1Progress
