@@ -22,6 +22,7 @@ The list of raw applications:
 * [dcraw](dcraw) - raw image to tiff/ppm
 * [flite](flite) - text-to-speech
 * [Minimal Hamiltonian Path](MinimalHamiltonianPath) - searches for minimal Hamiltonian path in weighted directed graphs
+* [SHA 1 Solver](sha1solver) - searches for collisions of sha1
 
 ## Cloning the repo
 When cloning the repo, remember to set up [git-lfs](https://git-lfs.github.com) for this

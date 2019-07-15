@@ -1,0 +1,24 @@
+{
+    "type": "wasm",
+    "name": "wasm",
+    "bid":  "1",
+    "subtask_timeout": "00:10:00",
+    "timeout": "00:10:00",
+    "options": {
+        "js_name": "sha1solver.js",
+        "wasm_name": "sha1solver.wasm",
+        "input_dir": "/home/lukaszglen/wasm_test_5/sha1/in",
+        "output_dir": "/home/lukaszglen/wasm_test_5/sha1/out",
+        "subtasks": {
+            "subtask1": {
+                "exec_args": ["0", "2", "2", "3", "9d", "infile", "out.txt"],
+                "output_file_paths": ["out.txt"]
+            },
+            "subtask2": {
+                "exec_args": ["1", "2", "2", "3", "9d", "infile", "out.txt"],
+                "output_file_paths": ["out.txt"]
+            }
+        }
+    }
+}
+
