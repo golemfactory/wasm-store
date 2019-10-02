@@ -58,6 +58,7 @@ vi task.json
         "wasm_name": "mhp.wasm",
         "input_dir": "/home/lukaszglen/wasm_test_5/t2/in",
         "output_dir": "/home/lukaszglen/wasm_test_5/t2/out",
+        "__comment":"there are three subtasks, but there will be six jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["0", "3"],
