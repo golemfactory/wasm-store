@@ -8,14 +8,18 @@ as well as links that point to external sources.
 The applications can either be in a raw, Wasm format, or (preferably) they can be augmented with a GUI/CLI for the user's convenience.
 Using raw Wasm binaries implies that the user has to be able to prepare the corresponding `task.json` and the required folder structure themselves, and be able to directly connect with their Golem client (e.g., via the use of the [Golem CLI](https://github.com/golemfactory/golem-client)). 
 Therefore, as such, this approach requires some technical knowledge of the Golem's internals.
-See [here](https://docs.golem.network/#/About/Use-Cases?id=wasm)
+See [here](https://docs.golem.network/#/Products/Brass-Beta/gWASM)
 to learn how to launch a Wasm task in Golem.
 The applications augmented with a GUI/CLI are naturally more user friendly,
-because they handle communication with Golem node,
+because they handle communication with Golem node.
 Having said that, there currently is no generic way of preparing such a GUI/CLI. There are some examples however. See the [g-flite](https://github.com/golemfactory/g-flite) app for instance.
 
 The list of applications with GUI/CLI:
 * [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
+
+The list of applications with GUI/CLI that are using gwasm-runner (which is still under development):
+* [gudot](https://github.com/golemfactory/gudot) - PoC that uses experimental FHE to calculate regresion line
+* [mandelbrot](https://github.com/golemfactory/mandelbrot) - renders fractal
 
 The list of raw applications:
 * [7-zip](7-zip) - 7-zip archiver
