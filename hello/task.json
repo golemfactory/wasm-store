@@ -9,6 +9,7 @@
         "wasm_name": "hello.wasm",
         "input_dir": "/path/to/your/working/directory/hello/in",
         "output_dir": "/path/to/your/working/directory/hello/out",
+        "__comment": "there is one subtask, but there will be two jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["world"],
