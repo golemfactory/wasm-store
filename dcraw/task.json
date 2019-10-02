@@ -9,7 +9,7 @@
         "wasm_name": "dcraw.wasm",
         "input_dir": "<path-to-wasm-store>/dcraw/in",
         "output_dir": "<path-to-wasm-store>/dcraw/out",
-        "__comment":"there is one subtask, but there will be two jobs for the verification purpose (VbR)",
+        "__comment": "there is one subtask, but there will be two jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": [
