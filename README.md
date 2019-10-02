@@ -83,6 +83,7 @@ where the `task.json` would consist of
         "wasm_name": "program.wasm",
         "input_dir": "<abs_path_to_the_repo>/input_dir",
         "output_dir": "<abs_path_to_the_repo>/output_dir",
+        "__comment": "there are two subtasks, but there will be four jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["arg1_1", "arg1_2"],
