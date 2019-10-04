@@ -85,6 +85,7 @@ vi task.json
         "wasm_name": "sha1solver.wasm",
         "input_dir": "/home/lukaszglen/wasm_test_5/sha1/in",
         "output_dir": "/home/lukaszglen/wasm_test_5/sha1/out",
+        "__comment": "there are three subtasks, but there will be six jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": ["0", "3", "2", "3", "9d", "infile", "out.txt"],

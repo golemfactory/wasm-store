@@ -9,6 +9,7 @@
         "wasm_name": "flite.wasm",
         "input_dir": "<abs-path-to-wasm-store>/flite/in",
         "output_dir": "<abs-path-to-wasm-store>/flite/out",
+        "__comment": "there is one subtask, but there will be two jobs for the verification purpose (VbR)",
         "subtasks": {
             "subtask1": {
                 "exec_args": [
