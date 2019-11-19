@@ -18,6 +18,7 @@ The list of applications with GUI/CLI:
 * [g-flite](https://github.com/golemfactory/g-flite) - text-to-speech
 
 The list of applications with GUI/CLI that are using gwasm-runner (which is still under development, refer to [gwasm-runner](https://github.com/golemfactory/gwasm-runner) as a framework for fast gWASM applications development):
+* [hello-gwasm-runner](https://github.com/golemfactory/hello-gwasm-runner) - a "hello world" style app for `gwasm-runner`
 * [gudot](https://github.com/golemfactory/gudot) - PoC that uses experimental FHE to calculate regresion line
 * [mandelbrot](https://github.com/golemfactory/mandelbrot) - renders fractal
 
